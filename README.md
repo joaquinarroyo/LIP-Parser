@@ -18,7 +18,7 @@ stack build
 ```
 Una vez compilado el proyecto, se puede correr el ejecutable definido en `app/Main.hs` sobre un archivo `.lis` haciendo:
 ```
-stack exec PARSER-exe -- PATH_TO_SOURCE [-OPT]
+stack exec TP1-exe -- PATH_TO_SOURCE [-OPT]
 ```
 Las opciones disponibles son:
 * `-p`: Imprimir el programa de entrada
@@ -28,15 +28,15 @@ Las opciones disponibles son:
 
 Por ejemplo, para imprimir el programa `div.lis` del directorio `Ejemplos`, ejecutar
 ```
-stack exec PARSER-exe -- Ejemplos/div.lis -p
+stack exec TP1-exe -- Ejemplos/div.lis -p
 ```
 Para correrlo con el evaluador de `Eval2.hs`
 ```
-stack exec PARSER-exe -- Ejemplos/div.lis -e 2
+stack exec TP1-exe -- Ejemplos/div.lis -e 2
 ```
 Para imprimir el programa de entrada
 ```
-stack exec PARSER-exe -- Ejemplos/div.lis -p
+stack exec TP1-exe -- Ejemplos/div.lis -p
 ```
 ## Info sobre estructuras utilizadas
 En el archiov AST.hs estan definidas las estructuras utilizadas.
