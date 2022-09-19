@@ -40,19 +40,19 @@ stack exec PARSER-exe -- Ejemplos/div.lis -p
 ```
 ## Info sobre estructuras utilizadas
 En el archiov AST.hs estan definidas las estructuras utilizadas.
-Se utilizo _Exp_ para definir las expresiones enteras y booleanas y _Comm_ para definir los comandos.
+Se utilizo la estructura ___Exp___ para definir las expresiones enteras y booleanas y ___Comm___ para definir los comandos.
 
 ## Evaluadores
 Los tres evaluadores reciben una secuencia de comandos y un estado, y a medida que van ejecutando dichos comandos, van actualizando el estado.
 
-- 1 Simplemnete ejecuta los comando y le deja el manejo de errores a Haskell. El estado está definido como un Map(Var, Int), es decir, las _keys_ son las variables, y los _values_ su valor(entero).
+- 1 Simplemente ejecuta los comando y le deja el manejo de errores a Haskell. El estado está definido como un Map(Var, Int), es decir, las ___keys___ son las variables, y los ___values___ su valor(entero).
 - 2 El segundo evaluador es igual que el primero solo que con manejo de errores interno. Los errores que maneja son UndefVar y DivByZero. Además, el estado está definido igual que en el primer evaluador.
 - 3 El tercer evaluador es igual al segundo, y además dentro del estado va llevando el _trabajo_ del programa. En este caso, el estado está definido como una tupla (Map(Var, Int), Int) donde la primer componente es el mapa anteriormente mencionado, y la segunda componente es el _trabajo_ del programa.
 
 ### Costos de trabajo de operaciones para tercer evaluador
-- 1 W(e1 _nop_ e2) = 3 + W(e1) + W(e2) donde _nop_ = `[/, *]`
-- 2 W(e1 _bop_ e2) = 2 + W(e1) + W(e2) donde _bop_ = `[+, -, &&, ||, Lt, Gt, Eq, NEq]`
-- 3 W(_op_ e) = 1 + W(e) donde _op_ = `[- unitario, not]`
+- 1 W(e1 ___nop___ e2) = 3 + W(e1) + W(e2) donde ___nop___ in `{/, *}`
+- 2 W(e1 ___bop___ e2) = 2 + W(e1) + W(e2) donde ___bop___ in `{+, -, And, Or, Lt, Gt, Eq, NEq}`
+- 3 W(___op___ e) = 1 + W(e)               donde ___op___ in `{- unitario, Not}`
 
 ##
 __Autores:__ [Caporalini Joaquin](https://github.com/JoaquinCaporalini) y Arroyo Joaquin
