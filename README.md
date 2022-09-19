@@ -54,4 +54,4 @@ Los tres evaluadores reciben una secuencia de comandos y un estado, y a medida q
 - 2 W(e1 _bop_ e2) = 2 + W(e1) + W(e2) donde _bop_ = `[+, -, &&, ||, Lt, Gt, Eq, NEq]`
 - 3 W(_op_ e) = 1 + W(e) donde _op_ = `[- unitario, not]`
 
-__Autores:__ Caporalini Joaquin y Arroyo Joaquin
+__Autores:__ [Caporalini Joaquin](https://github.com/JoaquinCaporalini) y Arroyo Joaquin
