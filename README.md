@@ -50,6 +50,6 @@ Los tres evaluadores reciben una secuencia de comandos y un estado, y a medida q
 - 3 El tercer evaluador es igual al segundo, y además dentro del estado va llevando el _trabajo_ del programa. En este caso, el estado está definido como una tupla (Map(Var, Int), Int) donde la primer componente es el mapa anteriormente mencionado, y la segunda componente es el _trabajo_ del programa.
 
 ### Costos de trabajo de operaciones para tercer evaluador
-W (e_1 nop e_2) = 3 + W(e_1) + W(e_2) donde nop = [/, *]
-W (e_1 bop e_2) = 2 + W(e_1) + W(e_2) donde nop = [+, -, &&, ||, Lt, Gt, Eq, NEq]
-W (op e) = 1 + W(e) donde nop = [- unitario, not]
+- W (e_1 nop e_2) = 3 + W(e_1) + W(e_2) donde nop = [/, *]
+- W (e_1 bop e_2) = 2 + W(e_1) + W(e_2) donde nop = [+, -, &&, ||, Lt, Gt, Eq, NEq]
+- W (op e) = 1 + W(e) donde nop = [- unitario, not]
