@@ -38,26 +38,15 @@ Para imprimir el programa de entrada
 ```
 stack exec PARSER-exe -- Ejemplos/div.lis -p
 ```
-# Info sobre estructuras utilizadas
+## Info sobre estructuras utilizadas
 En el archiov AST.hs estan definidas las estructuras utilizadas.
 Se utilizo _Exp_ para definir las expresiones enteras y booleanas y _Comm_ para definir los comandos.
 
-# Evaluadores
-- 1 El primer evaluador recibe una secuencia de comandos y los va ejecutando. Le deja el manejo de errores a Haskell.
-- 2 El segundo evaluador es igual que el primero solo que con manejo de errores interno. Los errores que maneja son UndefVar y DivByZero.
-- 3 El tercer evaluador es igual al segundo, y además dentro del estado va llevando el _trabajo_ del programa
+## Evaluadores
+Los tres evaluadores reciben una secuencia de comandos y un estado, y a medida que van ejecutando dichos comandos, van actualizando el estado.
 
-## Referencias
-[1] - https://docs.haskellstack.org/en/stable/README/#how-to-install
+- 1 Simplemnete ejecuta los comando y le deja el manejo de errores a Haskell. El estado está definido como un Map(Var, Int), es decir, las _keys_ son las variables, y los _values_ su valor(entero).
+- 2 El segundo evaluador es igual que el primero solo que con manejo de errores interno. Los errores que maneja son UndefVar y DivByZero. Además, el estado está definido igual que en el primer evaluador.
+- 3 El tercer evaluador es igual al segundo, y además dentro del estado va llevando el _trabajo_ del programa. En este caso, el estado está definido como una tupla (Map(Var, Int), Int) donde la primer componente es el mapa anteriormente mencionado, y la segunda componente es el _trabajo_ del programa.
 
-[2] - https://downloads.haskell.org/~ghc/6.6/docs/html/users_guide/gadt.html
 
-[3] - https://en.wikipedia.org/wiki/Generalized_algebraic_data_type
-
-[4] - http://dev.stephendiehl.com/hask/#gadts
-
-[5] - https://hackage.haskell.org/package/containers-0.6.3.1/docs/Data-Map-Strict.html
-
-[6] - http://hackage.haskell.org/package/strict-0.4/docs/Data-Strict-Tuple.html
-
-[7] - https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/pattern_synonyms.html
