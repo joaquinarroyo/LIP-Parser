@@ -3,7 +3,7 @@ Parser de Lenguaje Imperativo Simple implementado en Haskell con la libreria [**
 Proyecto realizado con [**Stack**](https://docs.haskellstack.org/).
 
 ## Especificación
-Gramática y sintáxis en `Especificación.pdf`
+Gramática y sintáxis en `Especificacion.pdf`
 
 ## Como utilizar el programa
 Stack se encarga de instalar la versión correcta de GHC, instalar los paquetes necesarios y compilar el proyecto. Para las primeras dos, basta con ejecutar
