@@ -2,10 +2,10 @@
 Parser de Lenguaje Imperativo Simple implementado en Haskell con la libreria [**Parsec**](https://hackage.haskell.org/package/parsec).
 Proyecto realizado con [**Stack**](https://docs.haskellstack.org/).
 
-# Especificación
+## Especificación
 Gramática y sintáxis en `Especificación.pdf`
 
-# Como utilizar el programa
+## Como utilizar el programa
 Stack se encarga de instalar la versión correcta de GHC, instalar los paquetes necesarios y compilar el proyecto. Para las primeras dos, basta con ejecutar
 ```
 stack setup
